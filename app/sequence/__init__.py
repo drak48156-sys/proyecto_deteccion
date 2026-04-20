@@ -1,0 +1,1 @@
+"""Sequence building stage."""
