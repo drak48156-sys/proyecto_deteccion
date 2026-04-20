@@ -21,19 +21,25 @@ Fase de documentación y scaffolding técnico inicial del MVP.
 - `main.py` — punto de entrada del pipeline
 
 ## Ejecutar
-### 1. Instalar dependencias
+### 1. Crear entorno virtual e instalar dependencias
 ```bash
-pip install -r requirements.txt
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
 ```
 
 ### 2. Correr pipeline
 ```bash
-python main.py ruta/al/video.mp4 --imu ruta/opcional/al/imu.npy
+.venv/bin/python main.py ruta/al/video.mp4 --imu ruta/opcional/al/imu.npy
 ```
 
 ### 3. Ver dashboard
 ```bash
-streamlit run app/dashboard/app.py
+.venv/bin/streamlit run app/dashboard/app.py
+```
+
+### 4. Ejemplo validado
+```bash
+.venv/bin/python main.py /data/.openclaw/workspace/hackathon/inbound_videos/left_13Deu2vxds0QTg3gdnvA3JhHo5k9KXZqK.mp4 --sample-stride 15
 ```
 
 ## Secuencia de trabajo
