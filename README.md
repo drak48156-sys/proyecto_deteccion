@@ -3,7 +3,7 @@
 Base inicial del proyecto **PatternSight**, un sistema de inteligencia operacional predictiva orientado a aprender patrones desde video y sensores.
 
 ## Estado actual
-Fase de documentación y scaffolding técnico inicial del MVP.
+Fase de documentación, scaffolding técnico e interfaz interactiva inicial del MVP.
 
 ## Documentos incluidos
 - `docs/product-v1.md` — documento de producto
@@ -17,7 +17,7 @@ Fase de documentación y scaffolding técnico inicial del MVP.
 - `app/features/` — extracción de features
 - `app/patterns/` — scoring de patrón y anomalía
 - `app/scoring/` — generación de salidas
-- `app/dashboard/` — dashboard inicial
+- `app/dashboard/` — dashboard inicial con upload de video
 - `main.py` — punto de entrada del pipeline
 
 ## Ejecutar
@@ -32,10 +32,16 @@ python3 -m venv .venv
 .venv/bin/python main.py ruta/al/video.mp4 --imu ruta/opcional/al/imu.npy
 ```
 
-### 3. Ver dashboard
+### 3. Ver dashboard interactivo
 ```bash
 .venv/bin/streamlit run app/dashboard/app.py
 ```
+
+En esa interfaz podrás subir videos y ver:
+- metadata
+- señal de movimiento
+- secuencias estimadas
+- scores iniciales
 
 ### 4. Ejemplo validado
 ```bash

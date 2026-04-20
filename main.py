@@ -2,12 +2,7 @@ from __future__ import annotations
 
 import argparse
 
-from app.features.extractor import extract_features
-from app.ingest.loader import load_session
-from app.patterns.engine import evaluate_patterns
-from app.scoring.reporter import write_outputs
-from app.sequence.builder import build_sequences
-from app.vision.tracker import run_tracking
+from app.pipeline import run_pipeline
 
 
 def parse_args() -> argparse.Namespace:
@@ -25,12 +20,7 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
-    session = load_session(args.video, args.imu)
-    vision_summary = run_tracking(session.video_path, sample_stride=args.sample_stride)
-    sequence_summary = build_sequences(vision_summary)
-    feature_summary = extract_features(sequence_summary)
-    pattern_summary = evaluate_patterns(feature_summary)
-    write_outputs(vision_summary, sequence_summary, feature_summary, pattern_summary)
+    run_pipeline(args.video, args.imu, sample_stride=args.sample_stride)
     print("PatternSight MVP ejecutado. Revisa outputs/report.json y outputs/summary.md")
 
 
