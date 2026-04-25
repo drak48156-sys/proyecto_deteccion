@@ -9,6 +9,7 @@ Fase de documentación, scaffolding técnico e interfaz interactiva inicial del 
 - `docs/product-v1.md` — documento de producto
 - `docs/functional-architecture-v1.md` — arquitectura funcional inicial
 - `docs/technical-architecture-v1.md` — arquitectura técnica inicial
+- `docs/propuesta-monitoreo-tanque-v1.md` — propuesta detallada del frente de detección de fugas en tanque
 
 ## Estructura base del MVP
 - `app/ingest/` — carga de video y sensores
@@ -19,6 +20,7 @@ Fase de documentación, scaffolding técnico e interfaz interactiva inicial del 
 - `app/scoring/` — generación de salidas
 - `app/dashboard/` — dashboard inicial con upload de video
 - `main.py` — punto de entrada del pipeline
+- `prototypes/tank_sim_python/` — prototipo Python para simulación de tanque, anomalías y alertas
 
 ## Ejecutar
 ### 1. Crear entorno virtual e instalar dependencias
@@ -58,3 +60,6 @@ En esa interfaz podrás subir videos y ver:
 
 ## Idea central
 PatternSight no busca solo analizar video cuadro por cuadro. Busca aprender secuencias, ciclos, drift, anomalías y comportamiento operativo para convertirlos en señales útiles de decisión.
+
+## Frente actual
+Además del frente de video, este repo pasa a ser el repositorio principal del trabajo de detección de fugas y simulación de tanque. Aquí se subirá la propuesta, prototipos Python, evolución de lógica de detección y siguientes iteraciones del sistema.
